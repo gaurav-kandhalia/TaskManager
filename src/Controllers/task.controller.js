@@ -1,6 +1,6 @@
 
-import { asyncHandler } from "../utils/asyncHandler.js";
-import { ApiError } from "../utils/apiError.js";
+import { asyncHandler } from "../utils/AsyncHandler.js";
+import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import { Task } from "../models/task.model.js";
 import PDFDocument from 'pdfkit'
@@ -17,8 +17,7 @@ const setTask = asyncHandler(async (req,res)=>{
     const { title, description, dueDate, status } = req.body;
     console.log(req.body)
     const userId = req.user._id;
-    console.log("--------------userId------------");
-    console.log(userId);
+    
     if(!userId){
         res.status(401)
         .json(
