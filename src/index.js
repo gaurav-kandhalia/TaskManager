@@ -1,12 +1,12 @@
 
 import dotenv from 'dotenv'
 import connectDB from './db/db.js';
-import morgan from 'morgan';
+
 import {app} from './app.js'
 dotenv.config({
     path: './.env'
 })
-app.use(morgan("dev"));
+
 
 connectDB()
 

@@ -13,6 +13,7 @@ const __dirname = dirname(__filename);
 
 
 const setTask = asyncHandler(async (req,res)=>{
+  console.log("------------------setTask------------------------")
     const { title, description, dueDate, status } = req.body;
     console.log(req.body)
     const userId = req.user._id;
@@ -114,11 +115,11 @@ const myTasks = asyncHandler(async (req,res)=>{
     }
 
     const tasks = await Task.find({userId:userId});
-    console.log(tasks);
+   
     if (!tasks || tasks.length === 0) {
         console.log("No tasks found for this user.");
       } else {
-        console.log(tasks);
+        
       }
 
       res.status(201)

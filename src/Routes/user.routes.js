@@ -1,5 +1,5 @@
 import {Router} from 'express'
-import { loginUser, registerUser , logoutUser,refreshAccessToken} from '../Controllers/user.controller.js';
+import { loginUser, registerUser , logoutUser} from '../Controllers/user.controller.js';
 import { editTask, setTask ,deleteTask, myTasks, generatePdf} from '../Controllers/task.controller.js';
 import {authenticatUser} from '../middlewares/auth.middleware.js'
 const userRouter = Router();
@@ -7,7 +7,7 @@ const userRouter = Router();
 userRouter.route('/register').post(registerUser)
 userRouter.route('/login').post(loginUser);
 userRouter.route('/logout').post(authenticatUser,logoutUser)
-userRouter.route('/refreshToken').post(refreshAccessToken);
+
 
 // task Routes
 
